@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/Users/dawnlifsey/.local/share/virtualenvs/w5-freeshelf-redkatyusha-YDzqsXIX/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.prospectorEnabled": true,
+    "python.linting.enabled": true
+}
