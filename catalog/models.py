@@ -7,7 +7,7 @@ class Category(models.Model):
     
     name = models.CharField(max_length=200)
 
-    def str(self):
+    def __str__(self):
         return self.name
 
 class Book(models.Model):
