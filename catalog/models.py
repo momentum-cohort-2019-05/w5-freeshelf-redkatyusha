@@ -17,7 +17,7 @@ class Book(models.Model):
     url = models.URLField()
     description = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
-    image = models.URLField()
+    image = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.title
