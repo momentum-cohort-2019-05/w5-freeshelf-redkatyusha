@@ -14,7 +14,8 @@ class Book(models.Model):
     
     title = models.CharField(max_length=500)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
-    summary = models.TextField(max_length=1000)
+    url = models.URLField()
+    description = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
 
     def __str__(self):
