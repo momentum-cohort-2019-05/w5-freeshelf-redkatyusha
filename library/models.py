@@ -1,7 +1,6 @@
-import uuid
 from django.db import models
 from django.urls import reverse
-import datetime
+
 
 class Book(models.Model):
     """
@@ -31,10 +30,18 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
 
+    def get_absolute_url(self):
+        """Returns the URL to access the details about an Author."""
+        return reverse('author-detail', args=[str(self.id)])
+
+    def __str__(self):
+        """String for representing an Author."""
+        return f'{self.last_name}, {self.first_name}'
+
 
 class Category(models.Model):
     """
-    A model representing categories that each instance of the Book model may a part of.
+    A model representing categories that each instance of the Book model may be a part of.
     """
 
     name = models.CharField(max_length=200, help_text='Enter a category of book')
