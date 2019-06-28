@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Freeshelf</h1>
     <h2>Category: {{ category }}</h2>
-    <p>The following books are about the category "{{ category }}"</p>
+    <p>The following books are about {{ category }}.</p>
     <hr/>
         <ul>
             {% for book in category.book_set.all %}
