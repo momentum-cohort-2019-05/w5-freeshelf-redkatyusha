@@ -10,7 +10,7 @@
         {% endfor %}
     </p>
     <p>{{ book.description }}</p>
-    {% if book.image == "" %}
+    {% if book.image == None %}
         <p><em>No image provided.</em></p>
     {% else %}
         <img src="{{ book.image }}">
