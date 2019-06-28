@@ -3,16 +3,19 @@
 {% block content %}
     <h1>Freeshelf</h1>
     <h2>Title: {{ book.title }}</h2>
-    <h4><a href="{{ book.url }}">Link</a></h4>
+    <h4><a href="{{ book.url }}" target="_blank">Source</a></h4>
     <p><strong>Categories: </strong> 
         {% for category in book.category.all %}
             <a href="{% url 'category-detail' category.pk %}">{{ category }}</a>
         {% endfor %}
     </p>
+    <hr>
     <p>{{ book.description }}</p>
     {% if book.image == None %}
-        <p><em>No image provided.</em></p>
+        <p><em>No cover image provided.</em></p>
     {% else %}
         <img src="{{ book.image }}">
     {% endif %}
+    <hr>
+    <a href="{% url 'books' %}">Return to books</a>
 {% endblock %}

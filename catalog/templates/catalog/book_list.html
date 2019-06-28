@@ -4,6 +4,7 @@
     <h1>Freeshelf</h1>
     <h2>Book List</h2>
     <p>Every book in the library is listed here. To view books of a specific language, check out the <a href="{% url 'categories' %}">categories</a> page.</p>
+    <hr>
     {% if book_list %}
         <ul>
             {% for book in book_list %}
