@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Freeshelf</h1>
+    <h2>Category: {{ category }}</h2>
+    <p>The following books are about the category "{{ category }}"</p>
+    <hr/>
+        <ul>
+            {% for book in category.book_set.all %}
+              <li><a href="{% url 'book-detail' book.pk %}">{{ book }}</a> - {{ book.author }}</li>
+            {% endfor %}
+        </ul>
+{% endblock %}
