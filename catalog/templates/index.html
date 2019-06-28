@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Freeshelf</h1>
+  <p>Welcome to Freeshelf. Freeshelf is a catalog of free programming books from across the internet.</p>
+  <h2>Books Available</h2>
+  <ul>
+      {% for book in books %}
+      <li>{{ book.title }} - {{ book.author }}</li>
+      {% endfor %}
+  </ul>
+{% endblock %}
