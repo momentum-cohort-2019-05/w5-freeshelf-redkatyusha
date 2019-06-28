@@ -10,5 +10,9 @@
         {% endfor %}
     </p>
     <p>{{ book.description }}</p>
-    <img src="{{ book.image }}">
+    {% if book.image == "" %}
+        <p><em>No image provided.</em></p>
+    {% else %}
+        <img src="{{ book.image }}">
+    {% endif %}
 {% endblock %}
