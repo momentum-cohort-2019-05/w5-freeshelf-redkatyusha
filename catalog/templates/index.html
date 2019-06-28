@@ -3,10 +3,11 @@
 {% block content %}
   <h1>Freeshelf</h1>
   <p>Welcome to Freeshelf. Freeshelf is a catalog of free programming books from across the internet.</p>
-  <h2>Books Available</h2>
+  <h2>Recently Added</h2>
   <ul>
-      {% for book in books %}
-      <li>{{ book.title }} - {{ book.author }}</li>
+      {% for book in recent_books %}
+      <li><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> - {{ book.author }}</li>
       {% endfor %}
   </ul>
+  <p><em>To see all books, check out the full <a href="{% url 'books' %}">Book List</a>.</em></p>
 {% endblock %}

@@ -3,13 +3,12 @@
 {% block content %}
     <h1>Freeshelf</h1>
     <h2>Book List</h2>
+    <p>Every book in the library is listed here. To view books of a specific language, check out the <a href="">categories</a> page.</p>
     {% if book_list %}
         <ul>
             {% for book in book_list %}
             <li>
-                <h3><a href="{{ book.url }}">{{ book.title }}</a> - {{ book.author }}</h3>
-                <p>{{ book.description }}</p>
-                <img src="{{ book.image }}">
+                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> - {{ book.author }}
             </li>
             {% endfor %}
         </ul>

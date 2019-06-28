@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Freeshelf</h1>
+    <h2>Title: {{ book.title }}</h2>
+    <h4><a href="{{ book.url }}">Link</a></h4>
+    <p><strong>Categories: </strong> 
+        {% for category in book.category.all %}
+            <a href="">{{ category }}</a>
+        {% endfor %}
+    </p>
+    <p>{{ book.description }}</p>
+    <img src="{{ book.image }}">
+{% endblock %}
